@@ -1,0 +1,43 @@
+.snack .snack-theme .snack-theme-title {
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color: var(--themeColor);
+}
+.snack .snack-theme .snack-theme-image-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.snack .snack-theme .snack-theme-image-list .snack-theme-image-list-item {
+  width: 50%;
+}
+.snack .snack-theme .snack-theme-image-list .snack-theme-image-list-item:nth-child(3) {
+  width: 100%;
+}
+.snack .snack-newest .snack-newest-title {
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color: var(--themeColor);
+}
+.snack .snack-newest .snack-newest-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.snack .snack-newest .snack-newest-list .snack-newest-list-item {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.snack .snack-newest .snack-newest-list .snack-newest-list-item .imageWrapper {
+  height: 180rpx;
+  width: 180rpx;
+}
+.snack .snack-newest .snack-newest-list .snack-newest-list-item .desc .title {
+  text-align: center;
+}
+.snack .snack-newest .snack-newest-list .snack-newest-list-item .desc .price {
+  text-align: center;
+}

@@ -1,0 +1,19 @@
+.category {
+  display: flex;
+}
+.category .category-left {
+  width: 15%;
+  height: 600rpx;
+  border: 1px solid gold;
+}
+.category .category-left .category-box {
+  margin-top: 40rpx;
+}
+.category .category-left .category-box text {
+  color: #aa976c;
+}
+.category .category-right {
+  width: 85%;
+  border: 1px solid blueviolet;
+  height: 900rpx;
+}
