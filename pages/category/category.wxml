@@ -1,19 +1,19 @@
 <view class="category">
 <view class="category-left">
-    <view class="category-box" wx:for="{{catedetail}}" wx:key="id">
-      <text id="{{index}}">{{item.cate}}</text>
-    </view>
+    <navigate class="category-box" wx:for="{{catedetail}}" wx:key="id" url="/pages/good/good">
+      <text id="{{index}}" class="active">{{item.cate}}</text>
+    </navigate>
 </view>
 <view class="category-right">
    <navigator class="category-right" url="/pages/cart/cart" open-type="navigate">
-            <image class="img1" src="{{catedetail[catedetail_index]['banner']}}">
+            <image class="img1 active" src="{{catedetail[catedetail_index]['banner']}}">
             </image>
    </navigator>
-            <text class="txt">一一  {{item.cate}}  一一</text>
-    
-       <view class="category-right-box" wx:for="{{catedetail}}" wx:key="index">
-      </view>
- 
+            <text class="txt">一一  {{catedetail[catedetail_index]['cate']}}  一一</text>
+       <view class="category-right-box" wx:for="{{catedetail}}" wx:key="id">
+            <image class="category-img" id="{{index}}" src="{{item.detail[thumb]}}"></image>
+            <text>{{item.name}}</text>
+      </view>  
 </view>
 </view>
   
