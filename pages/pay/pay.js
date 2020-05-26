@@ -48,7 +48,7 @@ Page({
      let totleprice = 0;
     //  计算总价
     for (let i = 0; i < carts.length; i++) {
-      totleprice +=carts[i].num*carts[i].data.price;
+      totleprice +=(carts[i].num*carts[i].data.price).toFixed(2);
     }
     this.setData({
       address,totleprice,carts
