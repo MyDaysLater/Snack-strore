@@ -19,7 +19,7 @@
   <view class="snack-my-order">
     <view class="title">我的订单</view>
     <view class="order-list">
-      <view class="order-list-item" wx:for="{{carts}}">
+      <view class="order-list-item" wx:for="{{carts}}" wx:key="index">
         <view class="order-number">订单编号:A413358</view>
         <view class="order-content">
           <view class="left">
