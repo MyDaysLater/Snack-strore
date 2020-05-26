@@ -1,19 +1,40 @@
-<view class="category">
-<view class="category-left">
-    <navigate class="category-box" wx:for="{{catedetail}}" wx:key="id" url="/pages/good/good">
-      <text id="{{index}}" class="active">{{item.cate}}</text>
-    </navigate>
-</view>
-<view class="category-right">
-   <navigator class="category-right" url="/pages/cart/cart" open-type="navigate">
-            <image class="img1 active" src="{{catedetail[catedetail_index]['banner']}}">
-            </image>
+<view class="classify">
+ <!-- 左边菜单栏开始 -->
+ <view class="classify-left">
+   <view class="menu">
+     <view class="menu-item {{selectIndex===index?'active':''}}" wx:for="{{classify}}" wx:key="index" bindtap="handleMenuchange" data-index="{{index}}">{{item.cate}}</view>
+   </view>
+ </view>
+ <!-- 左边菜单栏结束 -->
+ <!-- 右边内容开始 -->
+ <scroll-view class="classify-right" scroll-y="true">
+ <!-- 右边主题的开始 -->
+    <navigator class="classify-right-top"  url="/pages/good/good?id=guowei" open-type="navigate">
+       <image src="{{right.banner}}" mode="widthFix"></image>
    </navigator>
-            <text class="txt">一一  {{catedetail[catedetail_index]['cate']}}  一一</text>
-       <view class="category-right-box" wx:for="{{catedetail}}" wx:key="id">
-            <image class="category-img" id="{{index}}" src="{{item.detail[thumb]}}"></image>
-            <text>{{item.name}}</text>
-      </view>  
+   <view class="classify-right-font">
+   {{right.cate}}
+   </view>
+   <!-- 右边主题的结束 -->
+ 
+ <!-- 产品图片列表的开始 -->
+ <view class="classify-right-img">
+   <view class="classify-right-img-list"
+   >
+      <navigate
+     url="/pages/good/good?id={{item.id}}" open-type="navigate"
+       class="classify-right-img-list-item"
+      wx:for="{{right.detail}}" wx:key="index" 
+     >
+         <image src="{{item.thumb}}" class="item-img" mode="widthFix">
+         </image>
+         <view class="item-text">
+         {{item.name}}
+         </view>
+      </navigate>
+   </view>
+ </view>
+ </scroll-view>
+ <!-- 产品图片列表的结束 -->
+  <!-- 右边内容结束 -->
 </view>
-</view>
-  

@@ -1,24 +1,38 @@
-// pages/category/category.js
+// pages/classify/classify.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    catedetail:{},
-    catedetail_index:0
+     classify:[],
+     selectIndex:0,//默认选中
+     right:{}
   },
-
+  //处理菜单的点击事件
+  handleMenuchange:function(e){
+    this.setData({
+      // setData（）函数用于将逻辑层数据发送到视图层，同时对应的改变this.data的值
+      selectIndex:e.currentTarget.dataset.index,
+      // 点击左边对应的内容赋值给右边
+      right:this.data.classify[e.currentTarget.dataset.index]
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let catedetail = require("../../data/cate-detail");
-    console.log(catedetail)
+    /*获取数据*/ 
+    let classify = require("../../data/cate-detail")
+    // 把左边对应的下标的那个数组与右边相对应
+    let right = classify[this.data.selectIndex];
+    console.log(classify);
+    /*将数据放在data中 */
     this.setData({
-      catedetail
+      /*放入形式key对应的内容 */
+      classify,right
+     
     })
-
   },
 
   /**

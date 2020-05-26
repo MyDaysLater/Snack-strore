@@ -1,4 +1,4 @@
-// pages/my/my.js
+// pages/pay/pay.js
 Page({
 
   /**
@@ -6,20 +6,31 @@ Page({
    */
   data: {
     address:{},
-    carts:[]
+    carts:[],
+    totleprice:0//总价
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let address = wx.getStorageSync("address")||{};
-    let carts = wx.getStorageSync("carts")||[];
-    this.setData({
-      address,carts
-    })
-  },
 
+  },
+ // 支付函数
+ pay:function(e){
+  wx.showModal({
+    content: '支付接口暂时屏蔽',
+    success:function(res){
+      if(res.confirm){
+        // open-type switchTab
+        // https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.switchTab.html
+          wx.switchTab({
+            url: '/pages/my/my',
+          })
+      }
+    }
+  })
+},
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -31,7 +42,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+     let address = wx.getStorageSync("address")||{};
+     let carts = wx.getStorageSync("carts")||[];
+     console.log(carts)
+     let totleprice = 0;
+    //  计算总价
+    for (let i = 0; i < carts.length; i++) {
+      totleprice +=carts[i].num*carts[i].data.price;
+    }
+    this.setData({
+      address,totleprice,carts
+    })
   },
 
   /**

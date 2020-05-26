@@ -4,6 +4,8 @@
     "pages/news/news",
     "pages/queen/queen",
     "pages/theme/theme",
+    "pages/address/address",
+    "pages/pay/pay",
     "pages/index/index",
     "pages/good/good",
     "pages/cart/cart",
