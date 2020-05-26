@@ -13,11 +13,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let address = wx.getStorageSync("address")||{};
-    let carts = wx.getStorageSync("carts")||[];
-    this.setData({
-      address,carts
-    })
+   
   },
 
   /**
@@ -31,7 +27,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let address = wx.getStorageSync("address")||{};
+    let carts = wx.getStorageSync("carts")||[];
+    this.setData({
+      address,carts
+    })
   },
 
   /**
